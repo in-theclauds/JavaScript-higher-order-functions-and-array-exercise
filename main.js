@@ -37,7 +37,6 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 //     canDrink.push(ages[i]);
 //   }
 // }
-// console.log(canDrink);
 
 
 // const canDrink = ages.filter(function(age) {
@@ -48,10 +47,27 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
 
 //----BEST WAY OF DOING FILTER (WITH ARROW FUNCTIONS)--\\\\
-const canDrink = ages.filter(age => age >= 21);
-console.log(canDrink);
+// const canDrink = ages.filter(age => age >= 21);
 
 
+//----FILTER RETAIL COMPANIES--\\\\
+
+// const retailCompanies = companies.filter(function(company) {
+//   if(company.category === 'Retail') {
+//     return true;
+//   }
+// })
+
+
+//----BEST WAY OF DOING FILTER (WITH ARROW FUNCTIONS)--\\\\
+// const retailCompanies = companies.filter(company => company.category === 'Retail')
+
+
+//GET 80'S COMPANIES
+
+const eightiesCompanies = companies.filter( company => (company.start >= 1980 &&  company.start < 1990));
+
+console.log(eightiesCompanies);
 
 
 //map
