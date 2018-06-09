@@ -114,12 +114,39 @@ const lastedTenYears = companies.filter(company => (company.end - company.start 
   // : = else                                                |
 const sortedCompanies = companies.sort((a,b) => (a.start > b.start ? 1 : -1));
 
-  console.log(sortedCompanies);
+//   console.log(sortedCompanies);
 
-
-
-
-
+const sortAges = ages.sort((a,b) => a - b);
+// console.log(sortAges)
 
 
 //reduce
+//------long way
+// const ageSum = ages.reduce(function(total, age) {
+//   return total + age;
+// }, 0);
+
+
+////shorthand
+const ageSum = ages.reduce((total, age) => total + age, 0);
+
+
+//GET TOTAL YEARS FOR ALL COMPANIES
+
+const totalYears = companies.reduce((total, company) => total + (company.end - company.start), 0);
+// console.log(totalYears)
+
+
+
+//COMBINED METHODS
+
+const combined = ages
+//array of all ages * 2
+  .map(age => age * 2)
+//filter anything that is 40 or over
+  .filter(age => age >= 40)
+  .sort((a,b) => a - b)
+  .reduce((a,b) => a + b, 0);
+
+  console.log(combined)
+  
